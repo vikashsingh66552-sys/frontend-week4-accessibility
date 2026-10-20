@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible and lightweight guide to everyday wellbeing and mindful habits.">
+  <title>Kindspace | Make Everyday Easier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Kindspace home"><span aria-hidden="true">✳</span> kindspace</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#tips">Everyday tips</a></li>
+          <li><a href="#checklist">Checklist</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A CALMER WAY TO MOVE THROUGH THE DAY</p>
+        <h1 id="hero-title">Make space for<br><span>what matters.</span></h1>
+        <p class="lead">Small, practical habits can help make a busy day feel more manageable. Start with one simple step.</p>
+        <a class="button" href="#checklist">Explore the checklist <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="Decorative illustration of a sunrise above green hills">
+        <div class="sun" aria-hidden="true"></div><div class="hill hill-back" aria-hidden="true"></div><div class="hill hill-front" aria-hidden="true"></div>
+      </div>
+    </section>
+    <section class="tips-section" id="tips" aria-labelledby="tips-title">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">A FEW GOOD REMINDERS</p><h2 id="tips-title">Simple things, <span>real value.</span></h2></div><p>Keep it practical. Pick the ideas that work for you and your routine.</p></div>
+        <div class="tip-grid">
+          <article class="tip-card"><span class="tip-number">01</span><span class="tip-icon" aria-hidden="true">☼</span><h3>Take a short break</h3><p>Step away from the screen for a moment and let your eyes rest.</p></article>
+          <article class="tip-card"><span class="tip-number">02</span><span class="tip-icon" aria-hidden="true">♧</span><h3>Drink some water</h3><p>Keep water nearby so it is easy to remember during the day.</p></article>
+          <article class="tip-card"><span class="tip-number">03</span><span class="tip-icon" aria-hidden="true">⌁</span><h3>Make a small plan</h3><p>Choose one important task and decide what the first step is.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="checklist-section container" id="checklist" aria-labelledby="checklist-title">
+      <div class="checklist-copy"><p class="eyebrow">YOUR NEXT STEP</p><h2 id="checklist-title">A little progress<br><span>adds up.</span></h2><p>Use this simple checklist to keep track of the actions you have completed during this visit.</p></div>
+      <div class="checklist" role="group" aria-label="Daily action checklist">
+        <label><input type="checkbox"> <span>Take a short screen break</span></label>
+        <label><input type="checkbox"> <span>Drink a glass of water</span></label>
+        <label><input type="checkbox"> <span>Write down one priority</span></label>
+        <p id="checklist-status" class="status" aria-live="polite">0 of 3 completed</p>
+      </div>
+    </section>
+    <section class="contact-section" id="contact">
+      <div class="container contact-inner"><div><p class="eyebrow">KEEP IT SIMPLE</p><h2>One small step<br>is a <span>good start.</span></h2></div><a class="button button-light" href="mailto:hello@kindspace.example">Get in touch <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><a class="brand" href="#home"><span aria-hidden="true">✳</span> kindspace</a><p>Simple ideas for everyday life.</p><p>© 2026 Kindspace</p></div></footer>
+  <script>
+    const boxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+    const status = document.getElementById('checklist-status');
+    function updateChecklist() {
+      const complete = [...boxes].filter(box => box.checked).length;
+      status.textContent = `${complete} of ${boxes.length} completed`;
+    }
+    boxes.forEach(box => box.addEventListener('change', updateChecklist));
+  </script>
+</body>
+</html>
